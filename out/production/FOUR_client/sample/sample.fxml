@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -12,26 +13,40 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="226.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="334.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <bottom>
-      <Button mnemonicParsing="false" onAction="#SendAction" prefHeight="25.0" prefWidth="65.0" text="Send" BorderPane.alignment="CENTER">
+      <Button mnemonicParsing="false" onAction="#SendAction" prefHeight="25.0" prefWidth="65.0" text="Send" BorderPane.alignment="BOTTOM_CENTER">
          <BorderPane.margin>
-            <Insets bottom="10.0" />
+            <Insets bottom="10.0" top="5.0" />
          </BorderPane.margin>
       </Button>
    </bottom>
    <top>
-      <Label prefHeight="17.0" prefWidth="165.0" text="Print your message to server" BorderPane.alignment="CENTER">
+      <Label prefHeight="17.0" prefWidth="165.0" text="Print your message to server" BorderPane.alignment="TOP_CENTER">
          <BorderPane.margin>
-            <Insets top="5.0" />
+            <Insets bottom="5.0" top="5.0" />
          </BorderPane.margin>
       </Label>
    </top>
    <center>
-      <TextField fx:id="msg" prefHeight="34.0" prefWidth="308.0" promptText="print it here" BorderPane.alignment="CENTER">
+      <TextField fx:id="msg" prefHeight="34.0" prefWidth="201.0" promptText="app time on/off" BorderPane.alignment="CENTER_LEFT">
          <BorderPane.margin>
-            <Insets left="10.0" right="10.0" />
+            <Insets left="5.0" right="5.0" />
          </BorderPane.margin>
       </TextField>
    </center>
+   <right>
+      <AnchorPane prefHeight="197.0" prefWidth="178.0" BorderPane.alignment="CENTER_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="5.0" right="5.0" top="30.0" />
+         </BorderPane.margin>
+         <children>
+            <ImageView fx:id="img" fitHeight="172.0" fitWidth="173.0" layoutX="3.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/startIm.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </right>
 </BorderPane>

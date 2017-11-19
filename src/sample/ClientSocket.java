@@ -7,6 +7,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 
+
 public class ClientSocket{
     static private Socket connection;
     static private ObjectOutputStream output;
@@ -15,19 +16,28 @@ public class ClientSocket{
     public ClientSocket()
     {
         try {
-            connection = new Socket(InetAddress.getByName("127.0.0.1"), 5432);
+            connection = new Socket(InetAddress.getByName("127.0.0.1"), 5678);
             output = new ObjectOutputStream(connection.getOutputStream());
             input = new ObjectInputStream(connection.getInputStream());
         }
         catch (IOException e) {}
     }
 
-    public static void sendData(Object obj)
+    public static String sendData(Object obj)
     {
         try {
             output.flush();
             output.writeObject(obj);
+            while(true)
+            {
+                try{
+                    String s = (String)input.readObject();
+                    return s;
+                }catch(Exception e){}
+            }
         }
         catch (IOException e) {}
+        return "";
     }
+
 }
